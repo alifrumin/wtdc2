@@ -12,6 +12,7 @@
 <!-- ui router -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script src="/javascripts/leaflet.js"></script>
 
     <script src="/javascripts/angularApp.js"></script>
@@ -23,6 +24,7 @@
     <li role="presentation"><a href="#">Profile</a></li>
     <li role="presentation"><a href="#">Messages</a></li>
   </ul>
+    <div id="map"></div>
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<!-- We use UI-Router instead of ngRoute -->
@@ -39,8 +41,6 @@
 	<script type="text/ng-template" id="/home.html">
 		<div class="page-header">
 			<h1>Flapper News</h1>
-      <div id="map"></div>
-
 		</div>
 		<!-- Show all posts, sorted by upvotes -->
   	<div ng-repeat="post in posts | orderBy: '-upvotes'">
@@ -113,4 +113,7 @@
 			<button type="submit" class="btn btn-primary">Post</button>
 		</form>
 	</script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="/javascripts/leaflet.js"></script>
 </html>
