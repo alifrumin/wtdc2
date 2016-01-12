@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 
 var PostSchema = new mongoose.Schema({
 	title: String,
+	address: String,
+	description: String,
 	link: String,
 	upvotes: {type: Number, default: 0},
 	comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]  // The ref option is what tells Mongoose which model to use during population

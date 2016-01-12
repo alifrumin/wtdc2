@@ -1,10 +1,10 @@
 angular.module('flapperNews', ['ui.router'])
 // ui.router config
-.config([           							
+.config([
 	'$stateProvider',
 	'$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
-				
+
 		$stateProvider
 			.state('home', {
 				url: '/home',
@@ -16,7 +16,7 @@ angular.module('flapperNews', ['ui.router'])
 					}]
 				}
 			})
-			
+
 			.state('posts', {
 				url: '/posts/{id}',
 				templateUrl: '/posts.html',
@@ -37,7 +37,7 @@ angular.module('flapperNews', ['ui.router'])
 '$scope',
 'posts',
 function($scope, posts){
-	
+
 	$scope.posts = posts.posts;
 	/*
 	$scope.posts = [
@@ -53,15 +53,19 @@ function($scope, posts){
 		posts.create({
 			title: $scope.title,
 			link: $scope.link,
+			address: $scope.address,
+			description: $scope.description,
 		});
 		$scope.title = '';
 		$scope.link = '';
+		$scope.address = '';
+		$scope.description = '';
 	};
-	
+
 	$scope.deletePost = function(post) {
 		posts.delete(post);
 	}
-	
+
 	$scope.incrementUpvotes = function(post) {
 		posts.upvote(post);
 	};
