@@ -1,4 +1,3 @@
-(function(){
 
 var Map = function(){
 
@@ -49,26 +48,29 @@ var Map = function(){
     loc.bindPopup( name + "<br/><br/>" + "<span>To-Do</span><ul><li>" + $( "#placeTodo" ).val() + "</li></ul>" );
   };
 
-  this.connectMarkers = function(){
-    // Save length of geoJsonPlaces array
-    var numPlace = self.geoJsonPlaces.length - 1
+  // this.connectMarkers = function(){
+  //   // Save length of geoJsonPlaces array
+  //   var numPlace = self.geoJsonPlaces.length - 1
+  //
+  //   // Generate geoJSON string
+  //   var connection = {
+  //     "type": "LineString",
+  //     "coordinates": [
+  //       [ self.geoJsonPlaces[ numPlace-1 ][0], self.geoJsonPlaces[ numPlace-1 ][1] ],
+  //       [ self.geoJsonPlaces[ numPlace ][0], self.geoJsonPlaces[ numPlace ][1] ]
+  //     ]
+  //   };
+  //
+  //   // Attach geoJSON object to map
+  //   L.geoJson( connection ).addTo( map );
+  // };
 
-    // Generate geoJSON string
-    var connection = {
-      "type": "LineString",
-      "coordinates": [
-        [ self.geoJsonPlaces[ numPlace-1 ][0], self.geoJsonPlaces[ numPlace-1 ][1] ],
-        [ self.geoJsonPlaces[ numPlace ][0], self.geoJsonPlaces[ numPlace ][1] ]
-      ]
-    };
 
-    // Attach geoJSON object to map
-    L.geoJson( connection ).addTo( map );
-  };
 }
 
 $( document ).ready( function(){
   var app = new Map();
   map = app.renderMap();
+  var generalAssembly = L.marker( [38.9048542, -77.0339403] ).addTo( map );
+
 })
-}());
