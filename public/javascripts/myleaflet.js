@@ -9,7 +9,8 @@ var Map = function(){
   // Submit button click listener
   $("#submit").on( "click", function(){
     event.preventDefault();
-    var searchTerm = $("#placeName").val().replace( / /g, "+" );
+    var searchTerm = $("#address").val().replace( / /g, "+" );
+    console.log("#address");
     $.ajax({
       url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchTerm + "&pretty=1&key=62ee540db24fba16c87a0ba5d353d3a7"
     }).done( function( res ){
@@ -20,13 +21,10 @@ var Map = function(){
       var lng = response.geometry.lng;
       var name = response.components.attraction || response.components.building
       self.geoJsonPlaces.push([ lng, lat ]);
-
       // Run rendering methods for markers, popups and, if necessary, lines
       self.addMarkerPopup( lat, lng, name );
       self.numMarkers++;
-      if( self.numMarkers > 1 ){
-        self.connectMarkers();
-      }
+
     });
   });
 

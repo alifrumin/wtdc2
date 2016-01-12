@@ -10,6 +10,7 @@ In this project 'D' part of CRUD operations is already added. A post can be dele
 
 		$ npm install
 		$ npm start
+		$ DEBUG=MEAN-Stack-Flapper-News:* npm start
 
 
 Other functions whatever come to my mind will be updated later.
