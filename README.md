@@ -1,3 +1,11 @@
+Things to do:
+1. Update read me
+2. Import Planning
+3. User authorization
+4. Hide secret key by creating env variable
+5. Map locations using angular
+
+
 # Flapper-news
 
 Full code for mean stack tutorial in thinker.io. This is a very good practice of the MEAN stack. Hopefully this will help you get a basic understanding of how the MEAN stack works.
