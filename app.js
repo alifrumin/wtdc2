@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 // Require mongoose, connect and require mongoose models
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/news');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/news');
+
 require('./models/Posts');
 require('./models/Comments');
 
