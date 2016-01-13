@@ -63,5 +63,8 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.listen(process.env.PORT || 4000, function(){
+   console.log("* I'm working! Go to http://127.0.0.1:4000");
+ });
 
 module.exports = app;
