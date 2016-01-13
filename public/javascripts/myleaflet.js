@@ -5,33 +5,10 @@ var Map = function(){
   this.geoJsonPlaces = [];
   self = this;
 
-  // Submit button click listener
-  $("#submit").on( "click", function(){
-    event.preventDefault();
-    var searchTerm = $("#address").val().replace( / /g, "+" );
-    console.log("#address");
-    $.ajax({
-      url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchTerm + "&pretty=1&key=62ee540db24fba16c87a0ba5d353d3a7"
-    }).done( function( res ){
-      response = res.results[0];
-
-      // Save response values: latitude, longitude, location name
-      var lat = response.geometry.lat;
-      var lng = response.geometry.lng;
-      var name = response.components.attraction || response.components.building
-      self.geoJsonPlaces.push([ lng, lat ]);
-      // Run rendering methods for markers, popups and, if necessary, lines
-      self.addMarkerPopup( lat, lng, name );
-      self.numMarkers++;
-
-    });
-  });
-
   // Generates map + tiling
   this.renderMap = function(){
     // Create map
-    var map = L.map( "map" ).setView( [38.9038829, -77.0360032], 5 );
-
+    var map = L.map( "map" ).setView( [38.9038829, -77.0360032], 11 );
     // Add tiling
     L.tileLayer( "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
       maxZoom: 18,
@@ -68,9 +45,33 @@ var Map = function(){
 
 }
 
-$( document ).ready( function(){
+$(document).ready(function() {
   var app = new Map();
   map = app.renderMap();
-  var generalAssembly = L.marker( [38.9048542, -77.0339403] ).addTo( map );
-
+  var generalAssembly = L.marker([38.9048542, -77.0339403]).addTo(map);
+  $.ajax({
+    url: "/posts",
+    type: "GET",
+    dataType: "json"
+  }).done(function(res) {
+    console.log(res.length)
+    for (var i = 0; i < res.length; i++) {
+      console.log(res[i].address);
+      var searchTerm = res[i].address;
+      $.ajax({
+        url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchTerm + "&pretty=1&key=62ee540db24fba16c87a0ba5d353d3a7"
+      }).done( function( response ){
+        response = response.results[0];
+        console.log(response)
+        // Save response values: latitude, longitude, location name
+        var lat = response.geometry.lat;
+        var lng = response.geometry.lng;
+        var name = response.components.attraction || response.components.building
+        self.geoJsonPlaces.push([ lng, lat ]);
+        // Run rendering methods for markers, popups and, if necessary, lines
+        self.addMarkerPopup( lat, lng, name );
+        self.numMarkers++;
+      });
+    }
+  })
 })

@@ -16,3 +16,6 @@ In this project 'D' part of CRUD operations is already added. A post can be dele
 Other functions whatever come to my mind will be updated later.
 
 Enjoy!
+
+1. style map/hide keys
+2.

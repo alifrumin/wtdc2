@@ -60,6 +60,7 @@ function($scope, posts){
 		$scope.link = '';
 		$scope.address = '';
 		$scope.description = '';
+		
 	};
 
 	$scope.deletePost = function(post) {
