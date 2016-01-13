@@ -59,7 +59,7 @@ $(document).ready(function() {
       console.log(res[i].address);
       var searchTerm = res[i].address;
       $.ajax({
-        url: "http://api.opencagedata.com/geocode/v1/json?query=" + searchTerm + "&pretty=1&key=62ee540db24fba16c87a0ba5d353d3a7"
+        url: "https://api.opencagedata.com/geocode/v1/json?query=" + searchTerm + "&pretty=1&key=62ee540db24fba16c87a0ba5d353d3a7"
       }).done( function( response ){
         response = response.results[0];
         console.log(response)
