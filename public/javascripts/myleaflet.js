@@ -45,7 +45,7 @@ var Map = function(){
   this.addMarkerPopup = function( lat, lng, name ){
     // Add marker and popup to map
     var loc = L.marker( [ lat, lng ] ).addTo( map );
-    loc.bindPopup( name + "<br/><br/>" + "<span>To-Do</span><ul><li>" + $( "#placeTodo" ).val() + "</li></ul>" );
+    loc.bindPopup( name + "<br/><br/>" + "<span>To-Do</span><ul><li>" + $( "#address" ).val() + "</li></ul>" );
   };
 
   // this.connectMarkers = function(){
