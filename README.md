@@ -20,11 +20,11 @@ Enjoy!
 Things to Do:
 1. style map/hide keys
 2. add markers on post
-3. user auth
+3. user auth-- hide SECRET
 4. rename --- flapper news--- welcome to dc
 5. add planning folder... wireframes etc.
 6. Comment and breakout code... controller folder, factory... resources views
-7. add popup boxes 
+7. add popup boxes
 
 8. Style
 a) navbar
