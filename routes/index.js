@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var jwt = require('express-jwt');
-var env = require('../env.js')
+var fs = require("fs");
+var env = fs.existsSync("./env.js") ? require("../env") : process.env;
 var auth = jwt({secret: env.authSecret, userProperty: 'payload'});
 
 /* GET home page. */

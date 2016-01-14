@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
-var env = require('../env.js')
+var fs = require("fs");
+var env = fs.existsSync("./env.js") ? require("../env") : process.env;
 var UserSchema = new mongoose.Schema({
   username: {type: String, lowercase: true, unique: true},
   hash: String,
