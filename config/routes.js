@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require("passport");
 var usersController = require('../controllers/users');
+var staticsController = require('../controllers/statics');
 
 function authenticatedUser(req, res, next) {
   // If the user is authenticated, then we continue the execution
