@@ -10,7 +10,7 @@ In this project 'D' part of CRUD operations is already added. A post can be dele
 
 		$ npm install
 		$ npm start
-		$ DEBUG=MEAN-Stack-Flapper-News:* npm start
+		$ nodemon app.js
 
 
 Other functions whatever come to my mind will be updated later.
@@ -19,13 +19,6 @@ Enjoy!
 
 Things to Do:
 1. style map/hide keys
-2. add markers on post
 3. user auth
-4. rename --- flapper news--- welcome to dc
 5. add planning folder... wireframes etc.
 6. Comment and breakout code... controller folder, factory... resources views
-
-8. Style
-a) navbar
-b) color scheme
-c)
