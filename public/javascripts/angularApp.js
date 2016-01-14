@@ -3,7 +3,8 @@ angular.module('wtdc', ['ui.router'])
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+    'auth',
+    function($stateProvider, $urlRouterProvider, auth) {
 
       $stateProvider
         .state('home', {
@@ -22,7 +23,7 @@ angular.module('wtdc', ['ui.router'])
         templateUrl: '/posts.html',
         controller: 'PostsCtrl',
         resolve: {
-          post: ['$stateParams', 'posts', function($stateParams, posts) {
+          post: ['$stateParams', 'posts', 'auth', function($stateParams, posts, auth) {
             return posts.get($stateParams.id);
           }]
         }
@@ -126,11 +127,8 @@ function($scope, auth){
 '$scope',
 'posts',
 'post',
-'auth',
 function($scope, posts, post) {
 	$scope.post = post;
-	$scope.isLoggedIn = auth.isLoggedIn;
-
 	$scope.addComment = function() {
 		if ($scope.body === '') { return; }
 		posts.addComment(post._id, {
