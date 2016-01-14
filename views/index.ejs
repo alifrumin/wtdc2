@@ -61,6 +61,9 @@
       </span>
     </span>
     <span>{{post.description}}</span>
+    <span ng-show="post.author">
+  posted by <a>{{post.author}}</a> |
+</span>
     <!-- Show comments -->
     <span>
       <a href="#/posts/{{post._id}}"> ->comments({{post.comments.length}})</a>

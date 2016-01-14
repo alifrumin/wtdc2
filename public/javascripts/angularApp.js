@@ -57,7 +57,8 @@ angular.module('wtdc', ['ui.router'])
 .controller('MainCtrl', [
 '$scope',
 'posts',
-function($scope, posts){
+'auth',
+function($scope, posts, auth){
 
 	$scope.posts = posts.posts;
 
@@ -92,6 +93,7 @@ function($scope, posts){
 'auth',
 function($scope, $state, auth){
   $scope.user = {};
+	$scope.isLoggedIn = auth.isLoggedIn;
 
   $scope.register = function(){
     auth.register($scope.user).error(function(error){
@@ -124,8 +126,11 @@ function($scope, auth){
 '$scope',
 'posts',
 'post',
+'auth',
 function($scope, posts, post) {
 	$scope.post = post;
+	$scope.isLoggedIn = auth.isLoggedIn;
+
 	$scope.addComment = function() {
 		if ($scope.body === '') { return; }
 		posts.addComment(post._id, {
@@ -193,7 +198,7 @@ auth.logOut = function(){
   return auth;
 }])
 // Angular service
-.factory('posts', ['$http', function($http){
+.factory('posts', ['$http', 'auth', function($http, auth){
 	// service body
 	var o = {
 		posts: []
@@ -206,13 +211,18 @@ auth.logOut = function(){
 	};
 	// create new posts
 	o.create = function(post) {
-		return $http.post('/posts', post).success(function(data) {
-			o.posts.push(data);
-		});
+	  return $http.post('/posts', post, {
+	    headers: {Authorization: 'Bearer '+auth.getToken()}
+	  }).success(function(data){
+	    o.posts.push(data);
+	  });
 	};
+
 	// upvote
 	o.upvote = function(post) {
-		return $http.put('/posts/' + post._id + '/upvote').success(function(data) {
+		return $http.put('/posts/' + post._id + '/upvote', null, {
+			headers: {Authorization: 'Bearer '+auth.getToken()}
+		}).success(function(data) {
 			post.upvotes += 1;
 		});
 	};
@@ -234,10 +244,11 @@ auth.logOut = function(){
 	};
 	// upvote comment
 	o.upvoteComment = function(post, comment) {
-		return $http.put('/posts/' + post._id + '/comments/' + comment._id + '/upvote')
-			.success(function(data) {
-				comment.upvotes += 1;
-			});
+	  return $http.put('/posts/' + post._id + '/comments/'+ comment._id + '/upvote', null, {
+	    headers: {Authorization: 'Bearer '+ auth.getToken()}
+	  }).success(function(data){
+	    comment.upvotes += 1;
+	  });
 	};
 	return o;
 }])
