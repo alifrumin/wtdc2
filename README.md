@@ -1,24 +1,44 @@
-# Flapper-news
+Welcome to DC
+=============
+Map of DC with markers with suggested things to do with visitors. See [User Stories](planning/userStories.md "Wireframe") for more info.
 
-Full code for mean stack tutorial in thinker.io. This is a very good practice of the MEAN stack. Hopefully this will help you get a basic understanding of how the MEAN stack works.
+Tools:
+-----
+* Yeoman (played with it but did not end up using)
+* MEAN Stack
+* Heroku to Deploy
+* Bootstrap?
+* Leaflet
 
-The tutorial can be found at <a href="https://thinkster.io/angulartutorial/mean-stack-tutorial/">https://thinkster.io/angulartutorial/mean-stack-tutorial/</a>. It introduces how to work with the MEAN stack including building a REST interface with Express.js on top of Node.js and using that interface to perform CRUD operations(actually only 'CRU', but no 'D') on a database(MongoDB) via an Angular.js frontend.
+Challenges:
+-----------
+Passport integration, getting points to plot on submit.
 
-In this project 'D' part of CRUD operations is already added. A post can be deleted along with the comments belong to it.
+Notes:
+------
+Based off of [MEAN Stack tutorial](https://thinkster.io/angulartutorial/mean-stack-tutorial/)
 
-## Install & Run
-
+Install & Run:
+--------------
 		$ npm install
 		$ npm start
 		$ nodemon app.js
 
-
-Other functions whatever come to my mind will be updated later.
-
-Enjoy!
-
 Things to Do:
+-------------
 1. style map/hide keys
 3. user auth
 5. add planning folder... wireframes etc.
 6. Comment and breakout code... controller folder, factory... resources views
+
+Screenshot:
+----------
+![Screenshot](planning/screenshot.jpg "Screenshot")
+
+Wireframe:
+---------
+![wireframe](planning/wireframe.jpg "Wireframe")
+
+ERD:
+----
+![ERD](planning/erd.jpg "ERD")
