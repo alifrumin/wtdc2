@@ -1,4 +1,4 @@
-angular.module('flapperNews', ['ui.router'])
+angular.module('wtdc', ['ui.router'])
 // ui.router config
 .config([
 	'$stateProvider',
@@ -60,7 +60,7 @@ function($scope, posts){
 		$scope.link = '';
 		$scope.address = '';
 		$scope.description = '';
-		
+
 	};
 
 	$scope.deletePost = function(post) {

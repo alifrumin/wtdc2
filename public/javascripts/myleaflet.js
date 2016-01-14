@@ -19,36 +19,16 @@ var Map = function(){
     return map;
   };
 
-  this.addMarkerPopup = function( lat, lng, name ){
+  this.addMarkerPopup = function( lat, lng, name, addy ){
     // Add marker and popup to map
     var loc = L.marker( [ lat, lng ] ).addTo( map );
-    loc.bindPopup( name + "<br/><br/>" + "<span>To-Do</span><ul><li>" + $( "#placeTodo" ).val() + "</li></ul>" );
+    loc.bindPopup( name + addy);
   };
-
-  // this.connectMarkers = function(){
-  //   // Save length of geoJsonPlaces array
-  //   var numPlace = self.geoJsonPlaces.length - 1
-  //
-  //   // Generate geoJSON string
-  //   var connection = {
-  //     "type": "LineString",
-  //     "coordinates": [
-  //       [ self.geoJsonPlaces[ numPlace-1 ][0], self.geoJsonPlaces[ numPlace-1 ][1] ],
-  //       [ self.geoJsonPlaces[ numPlace ][0], self.geoJsonPlaces[ numPlace ][1] ]
-  //     ]
-  //   };
-  //
-  //   // Attach geoJSON object to map
-  //   L.geoJson( connection ).addTo( map );
-  // };
-
-
 }
 
 $(document).ready(function() {
   var app = new Map();
   map = app.renderMap();
-  var generalAssembly = L.marker([38.9048542, -77.0339403]).addTo(map);
   $.ajax({
     url: "/posts",
     type: "GET",
@@ -67,9 +47,10 @@ $(document).ready(function() {
         var lat = response.geometry.lat;
         var lng = response.geometry.lng;
         var name = response.components.attraction || response.components.building
+        var addy = response.formatted;
         self.geoJsonPlaces.push([ lng, lat ]);
         // Run rendering methods for markers, popups and, if necessary, lines
-        self.addMarkerPopup( lat, lng, name );
+        self.addMarkerPopup( lat, lng, name, addy );
         self.numMarkers++;
       });
     }

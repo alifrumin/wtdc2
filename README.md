@@ -24,7 +24,6 @@ Things to Do:
 4. rename --- flapper news--- welcome to dc
 5. add planning folder... wireframes etc.
 6. Comment and breakout code... controller folder, factory... resources views
-7. add popup boxes 
 
 8. Style
 a) navbar
