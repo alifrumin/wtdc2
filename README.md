@@ -12,7 +12,7 @@ Tools:
 
 Challenges:
 -----------
-Passport integration, getting points to plot on submit.
+Passport integration got it up and running but broke everything in the process. Did a git --reset hard, will try again next week. getting points to plot on submit.
 
 Notes:
 ------
@@ -27,13 +27,13 @@ Install & Run:
 Things to Do:
 -------------
 1. style map/hide keys
-3. user auth
-5. add planning folder... wireframes etc.
+3. user auth (take 2)
 6. Comment and breakout code... controller folder, factory... resources views
+
 
 Screenshot:
 ----------
-![Screenshot](planning/screenshot.jpg "Screenshot")
+![Screenshot](planning/screenshot.png "Screenshot")
 
 Wireframe:
 ---------

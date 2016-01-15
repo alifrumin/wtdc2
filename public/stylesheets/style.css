@@ -11,6 +11,7 @@ a {
   height: 500px;
 }
 
-.glyphicon-thumbs-up {
-  cursor: pointer
+.glyphicon-star {
+  cursor: pointer;
+  color: #C4D793;
 }
