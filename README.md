@@ -7,7 +7,7 @@ Tools:
 * Yeoman (played with it but did not end up using)
 * MEAN Stack
 * Heroku to Deploy
-* Bootstrap?
+* Bootstrap
 * Leaflet
 
 Challenges:

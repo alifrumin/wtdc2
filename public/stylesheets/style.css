@@ -15,3 +15,41 @@ a {
   cursor: pointer;
   color: #C4D793;
 }
+
+/*.delete {
+  background-color: #00B7FF;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+}*/
+.firstRow h2 {
+  display: inline;
+  text-align: center;
+}
+
+.firstRow {
+  text-align: center;
+}
+
+.gloat {
+  float: left;
+}
+
+.post {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.button {
+  background-color: #C4D793;
+  padding: 5px;
+  margin: 0px;
+  color: white;
+  border-radius: 5px;
+}
+
+a.button:hover {
+  text-decoration: none;
+  background-color: #00B7FF;
+}
