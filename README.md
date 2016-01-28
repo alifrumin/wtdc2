@@ -24,6 +24,9 @@ Install & Run:
 		$ npm start
 		$ nodemon app.js
 
+		make sure mongo is running: mongod --config /usr/local/etc/mongod.conf
+
+
 Things to Do:
 -------------
 1. style map/hide keys
