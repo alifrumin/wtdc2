@@ -1,27 +1,33 @@
+
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.nav {
+  position: fixed;
+}
 a {
   color: #00B7FF;
 }
 
 #map {
   height: 500px;
-}
+  padding: 0px;
+  margin-top: 40px;
+  position: fixed;
 
+}
+.ang {
+  margin: 0px;
+  padding: 0px;
+  float: right;
+}
 .glyphicon-star {
   cursor: pointer;
   color: #C4D793;
 }
 
-/*.delete {
-  background-color: #00B7FF;
-  color: white;
-  padding: 10px;
-  display: inline-block;
-}*/
 .firstRow h2 {
   display: inline;
   text-align: center;
