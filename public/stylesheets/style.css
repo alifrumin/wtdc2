@@ -1,5 +1,6 @@
+
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -8,20 +9,22 @@ a {
 }
 
 #map {
-  height: 500px;
-}
+  height: 100%;
+  padding: 0px;
+  margin-top: 40px;
+  position: fixed;
 
+}
+.ang {
+  margin: 0px;
+  padding: 20px;
+  float: right;
+}
 .glyphicon-star {
   cursor: pointer;
   color: #C4D793;
 }
 
-/*.delete {
-  background-color: #00B7FF;
-  color: white;
-  padding: 10px;
-  display: inline-block;
-}*/
 .firstRow h2 {
   display: inline;
   text-align: center;
@@ -53,3 +56,9 @@ a.button:hover {
   text-decoration: none;
   background-color: #00B7FF;
 }
+
+
+/*.page-header{
+  position: fixed;
+  height: 30px;
+}*/
