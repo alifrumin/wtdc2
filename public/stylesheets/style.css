@@ -4,15 +4,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.nav {
-  position: fixed;
-}
 a {
   color: #00B7FF;
 }
 
 #map {
-  height: 500px;
+  height: 100%;
   padding: 0px;
   margin-top: 40px;
   position: fixed;
@@ -20,7 +17,7 @@ a {
 }
 .ang {
   margin: 0px;
-  padding: 0px;
+  padding: 20px;
   float: right;
 }
 .glyphicon-star {
@@ -59,3 +56,9 @@ a.button:hover {
   text-decoration: none;
   background-color: #00B7FF;
 }
+
+
+/*.page-header{
+  position: fixed;
+  height: 30px;
+}*/

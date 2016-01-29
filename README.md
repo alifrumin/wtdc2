@@ -30,7 +30,9 @@ Install & Run:
 Things to Do:
 -------------
 1. style map/hide keys
+2. cap scroll
 3. user auth (take 2)
+4. add flash message that says posted when a post is successfully added
 6. Comment and breakout code... controller folder, factory... resources views
 
 

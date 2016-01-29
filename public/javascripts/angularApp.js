@@ -16,6 +16,26 @@ angular.module('wtdc', ['ui.router'])
 					}]
 				}
 			})
+			.state('newpost', {
+				url: '/newpost',
+				templateUrl: '/newpost.html',
+				controller: 'MainCtrl',
+				resolve: {
+					postPromise: ['posts', function(posts) {
+						return posts.getAll();
+					}]
+				}
+			})
+			.state('about', {
+				url: '/about',
+				templateUrl: '/about.html',
+				controller: 'MainCtrl',
+				resolve: {
+					postPromise: ['posts', function(posts) {
+						return posts.getAll();
+					}]
+				}
+			})
 
 			.state('posts', {
 				url: '/posts/{id}',
